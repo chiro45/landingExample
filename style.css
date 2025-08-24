@@ -9,6 +9,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   /* Eliminación de márgenes y padding predeterminados para todos los elementos */
 }
 
@@ -22,7 +23,6 @@ body {
   font-family: Arial, Helvetica, sans-serif; /* Fuente predeterminada */
   line-height: 1.6; /* Altura de línea para mejorar la legibilidad */
   background-color: var(--bgColor); /* Color de fondo del cuerpo de la página */
-  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -33,25 +33,20 @@ body {
 /* COMENZAMOS CON EL HEADER */
 
 header {
-  background-color: var(--bgColorOscuro); /* Color de fondo oscuro para el encabezado */
-  display: flex;
-  justify-content: center;
+  background-color: var(
+    --bgColorOscuro
+  ); /* Color de fondo oscuro para el encabezado */
   /* Encabezado centrado horizontalmente */
 }
 
-/* CLASES GENERICAS */
-
-.centradoHorizontalFlex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* Clase genérica para centrar contenido horizontal y verticalmente usando flexbox */
-}
+/* NAV */
 
 .contenedor__nav {
   display: flex;
   color: var(--colorTexto); /* Color de texto claro */
   width: 80%;
+  max-width: 2200px;
+  margin: 0 auto;
   justify-content: space-between;
   align-items: center;
   /* Contenedor de navegación con elementos distribuidos uniformemente */
@@ -64,6 +59,7 @@ header {
 .lista__nav {
   list-style: none;
   display: flex;
+  max-width: 2200px;
   justify-content: space-around;
   gap: 1.4rem;
   /* Lista de navegación alineada horizontalmente con espacio entre los elementos */
@@ -89,10 +85,6 @@ header {
 /* MAIN */
 
 .main__contenedor {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   margin-top: 4vh;
   /* Contenedor principal centrado y con un margen superior */
@@ -100,10 +92,7 @@ header {
 
 .contenedor__main {
   width: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin: 0 auto;
   gap: 2vh;
   /* Contenedor del contenido principal, con elementos centrados y un espaciado vertical */
 }
@@ -112,6 +101,8 @@ header {
 .banner__main {
   background-color: var(--colorBanner); /* Color de fondo del banner */
   width: 100%;
+  max-width: 2200px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -120,6 +111,7 @@ header {
   color: var(--colorTexto); /* Color del texto del banner */
   border-radius: 0.4rem;
   padding: 2rem 1.2rem;
+  margin-bottom: 2vh;
   /* Banner centrado con texto y botón, con bordes redondeados */
 }
 
@@ -132,7 +124,9 @@ header {
 }
 
 .button__banner {
-  background-color: var(--bgColorOscuro); /* Color de fondo del botón del banner */
+  background-color: var(
+    --bgColorOscuro
+  ); /* Color de fondo del botón del banner */
   color: var(--colorTexto); /* Color de texto del botón */
   padding: 0.4rem;
   border: none;
@@ -150,12 +144,14 @@ header {
 
 .caracteristicas__section {
   width: 100%;
-  margin-bottom: 2vh; /* Margen inferior de la sección de características */
+  max-width: 2200px;
+  margin: 0 auto;
+  margin-bottom: 3vh; /* Margen inferior de la sección de características */
 }
 
 .caracteristicas__section h2 {
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2vh;
   /* Título de la sección de características, centrado horizontalmente */
 }
 
@@ -172,6 +168,7 @@ header {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4); /* Sombra para dar efecto de elevación */
   padding: 0.4rem;
   height: 20vh;
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -183,11 +180,14 @@ header {
 /* FOOTER */
 
 .footer__contenedor {
-  background-color: var(--bgColorOscuro); /* Color de fondo oscuro para el pie de página */
+  background-color: var(
+    --bgColorOscuro
+  ); /* Color de fondo oscuro para el pie de página */
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+  min-height: 8vh;
   height: 100%;
   /* Contenedor del pie de página centrado horizontal y verticalmente */
 }
