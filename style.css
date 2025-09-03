@@ -10,12 +10,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Lato", sans-serif;
   /* Eliminación de márgenes y padding predeterminados para todos los elementos */
 }
 
 html {
   height: 100vh;
-  width: 100vw;
   /* Definición de altura y anchura completas para la raíz del documento */
 }
 
