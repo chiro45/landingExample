@@ -4,6 +4,9 @@
   --colorTexto: #fff; /* Color del texto claro */
   --colorTextoOscuro: #333; /* Color del texto oscuro */
   --colorBanner: #ff5733; /* Color del banner */
+  --shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  --maxWidth: 2000px;
+  --borderRadius: 16px;
 }
 
 * {
@@ -14,38 +17,25 @@
   /* Eliminación de márgenes y padding predeterminados para todos los elementos */
 }
 
-html {
-  height: 100vh;
-  /* Definición de altura y anchura completas para la raíz del documento */
-}
-
 body {
   font-family: Arial, Helvetica, sans-serif; /* Fuente predeterminada */
-  line-height: 1.6; /* Altura de línea para mejorar la legibilidad */
+  line-height: 1.5; /* Altura de línea para mejorar la legibilidad */
   background-color: var(--bgColor); /* Color de fondo del cuerpo de la página */
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  /* Configuración del cuerpo como un contenedor flex que se extiende en altura y se organiza en columnas */
 }
 
 /* COMENZAMOS CON EL HEADER */
 
 header {
-  background-color: var(
-    --bgColorOscuro
-  ); /* Color de fondo oscuro para el encabezado */
+  background-color: var(--bgColorOscuro);
+  padding: 0.4rem; /* Color de fondo oscuro para el encabezado */
   /* Encabezado centrado horizontalmente */
 }
 
 /* NAV */
-
 .contenedor__nav {
   display: flex;
   color: var(--colorTexto); /* Color de texto claro */
-  width: 80%;
-  max-width: 2200px;
+  max-width: var(--maxWidth);
   margin: 0 auto;
   justify-content: space-between;
   align-items: center;
@@ -59,7 +49,7 @@ header {
 .lista__nav {
   list-style: none;
   display: flex;
-  max-width: 2200px;
+  max-width: var(--maxWidth);
   justify-content: space-around;
   gap: 1.4rem;
   /* Lista de navegación alineada horizontalmente con espacio entre los elementos */
@@ -69,13 +59,20 @@ header {
   text-decoration: none; /* Eliminación del subrayado en los enlaces */
   color: var(--colorTexto); /* Color de texto de los enlaces */
   padding: 0.4rem;
-  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  font-size: 1.2rem;
   /* Efecto de transición suave al cambiar el color de fondo */
 }
 
 .link__nav:hover {
+  transition: background-color 0.3s ease;
   background-color: #555; /* Color de fondo al pasar el cursor por encima del enlace */
-  border-radius: 0.4rem; /* Bordes redondeados en el fondo del enlace */
+  border-radius: var(
+    --borderRadius
+  ); /* Bordes redondeados en el fondo del enlace */
 }
 
 .menu__nav {
@@ -83,35 +80,27 @@ header {
 }
 
 /* MAIN */
-
 .main__contenedor {
-  width: 100%;
-  margin-top: 4vh;
-  /* Contenedor principal centrado y con un margen superior */
-}
-
-.contenedor__main {
   width: 80%;
   margin: 0 auto;
-  gap: 2vh;
-  /* Contenedor del contenido principal, con elementos centrados y un espaciado vertical */
+  max-width: var(--maxWidth);
+  margin-top: 4vh;
+  /* Contenedor principal centrado y con un margen superior */
 }
 
 /* BANNER */
 .banner__main {
   background-color: var(--colorBanner); /* Color de fondo del banner */
-  width: 100%;
-  max-width: 2200px;
-  margin: 0 auto;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  gap: 2vh;
+  box-shadow: var(--shadow); /* Sombra para dar efecto de elevación */
+  gap: 1rem;
   align-items: center;
   color: var(--colorTexto); /* Color del texto del banner */
-  border-radius: 0.4rem;
+  border-radius: var(--borderRadius);
   padding: 2rem 1.2rem;
-  margin-bottom: 2vh;
+  margin-bottom: 2rem;
   /* Banner centrado con texto y botón, con bordes redondeados */
 }
 
@@ -128,15 +117,14 @@ header {
     --bgColorOscuro
   ); /* Color de fondo del botón del banner */
   color: var(--colorTexto); /* Color de texto del botón */
-  padding: 0.4rem;
+  padding: 0.8rem;
   border: none;
-  border-radius: 0.4rem;
+  border-radius: var(--borderRadius);
   font-size: 1.1rem; /* Tamaño de fuente del botón */
 }
 
 .button__banner:hover {
   background-color: #555; /* Color de fondo al pasar el cursor por encima del botón */
-  border-radius: 0.4rem;
   cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
 }
 
@@ -144,9 +132,9 @@ header {
 
 .caracteristicas__section {
   width: 100%;
-  max-width: 2200px;
+  max-width: var(--maxWidth);
   margin: 0 auto;
-  margin-bottom: 3vh; /* Margen inferior de la sección de características */
+  margin-bottom: 10vh; /* Margen inferior de la sección de características */
 }
 
 .caracteristicas__section h2 {
@@ -165,15 +153,15 @@ header {
 
 .caracteristicas {
   background-color: var(--bgColor); /* Color de fondo de cada característica */
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4); /* Sombra para dar efecto de elevación */
+  box-shadow: var(--shadow); /* Sombra para dar efecto de elevación */
   padding: 0.4rem;
-  height: 20vh;
+  height: 200px;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border-radius: 0.4rem;
+  border-radius: var(--borderRadius);
   /* Cada característica está centrada con un fondo claro y bordes redondeados */
 }
 
@@ -188,19 +176,21 @@ header {
   align-items: center;
   width: 100%;
   min-height: 8vh;
-  height: 100%;
+  position: fixed;
+  bottom: 0;
   /* Contenedor del pie de página centrado horizontal y verticalmente */
 }
 
 .footer__contenedor p {
   color: var(--colorTexto); /* Color del texto en el pie de página */
   text-align: center;
+
   /* Texto centrado en el pie de página */
 }
 
 /* MEDIAQUERYS */
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 768px) {
   .caracteristicas__contenedor {
     grid-template-columns: repeat(1, 1fr);
     /* En pantallas pequeñas, las características se muestran en una sola columna */
